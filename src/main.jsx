@@ -1,25 +1,23 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './index.css'
-import Home from './pages/Home'
-import Contact from './pages/Contact'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./index.css";
+import Home from "./pages/Home";
+import Header from "./components/NewHeader";
+import Footer from "./components/Footer";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className='flex flex-col min-h-screen'>
         <Header />
-        <main className="flex-grow">
+        <main className='flex-grow'>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path='/' element={<Home />} />
           </Routes>
         </main>
         <Footer />
       </div>
     </Router>
   </React.StrictMode>
-)
+);
