@@ -53,7 +53,7 @@ const Home = () => {
       ></div>
       {/* Page Content */}
       <div className='relative z-0 min-h-screen w-[100%]'>
-        <div className='flex flex-col justify-center h-full px-6 pt-48 md:pt-80 md:pl-[10%] max-w-6xl mx-auto text-white md:text-left text-center'>
+        <div className='flex flex-col justify-center h-full px-6 pt-40 md:pt-80 md:pl-[10%] max-w-6xl mx-auto text-white md:text-left text-center'>
           <h1 className='text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg'>
             Digital Solutions <br /> for Your Business
           </h1>
