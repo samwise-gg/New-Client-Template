@@ -42,7 +42,7 @@ export default function Contact() {
         />
 
         {/* Tier Plan Selector */}
-        <div className='flex justify-between gap-2'>
+        {/* <div className='flex justify-between gap-2'>
           {tiers.map((tier) => (
             <button
               type='button'
@@ -59,7 +59,7 @@ export default function Contact() {
             </button>
           ))}
         </div>
-        <input type='hidden' name='tier' value={selectedTier} />
+        <input type='hidden' name='tier' value={selectedTier} /> */}
 
         <textarea
           name='message'

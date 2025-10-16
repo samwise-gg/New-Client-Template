@@ -5,6 +5,9 @@ import { Navigation, Pagination, A11y } from "swiper/modules";
 import webDesign from "../assets/WebDesignBG.jpg";
 import responsiveDev from "../assets/ResponsiveDev.jpg";
 import searchEngOp from "../assets/SearchEngOp.jpg";
+import performanceTuning from "../assets/homeBG7.jpg";
+import accessibilityCompliant from "../assets/homeBG4.jpg";
+import maintenanceSupport from "../assets/team-hero.png";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -13,6 +16,13 @@ import "swiper/css/a11y";
 
 // Default services data; can be overridden via props
 const defaultServices = [
+  {
+    title: "SEO Optimization",
+    description:
+      "Improve your search rankings and drive more organic traffic with smart keyword strategies and on-page SEO.",
+    icon: "🔍",
+    background: { backgroundImage: `url(${searchEngOp})` },
+  },
   {
     title: "Web Design",
     description:
@@ -27,31 +37,24 @@ const defaultServices = [
     icon: "📱",
     background: { backgroundImage: `url(${responsiveDev})` },
   },
-  {
-    title: "SEO Optimization",
-    description:
-      "Improve your search rankings and drive more organic traffic with smart keyword strategies and on-page SEO.",
-    icon: "🔍",
-    background: { backgroundImage: `url(${searchEngOp})` },
-  },
-  //   {
-  //     title: "Performance Tuning",
-  //     description: "Fast-loading websites for better user experience.",
-  //     icon: "⚡",
-  //     background: { backgroundImage: `url(${webDesign})` },
-  //   },
-  //   {
-  //     title: "Accessibility Compliance",
-  //     description: "Inclusive designs accessible to all users.",
-  //     icon: "♿",
-  //     background: { backgroundImage: `url(${webDesign})` },
-  //   },
-  //   {
-  //     title: "Maintenance & Support",
-  //     description: "Ongoing support to keep your site up-to-date.",
-  //     icon: "🛠️",
-  //     background: { backgroundImage: `url(${webDesign})` },
-  //   },
+    {
+      title: "Performance Tuning",
+      description: "Fast-loading websites for better user experience.",
+      icon: "⚡",
+      background: { backgroundImage: `url(${performanceTuning})` },
+    },
+    {
+      title: "Accessibility Compliance",
+      description: "Inclusive designs accessible to all users.",
+      icon: "♿",
+      background: { backgroundImage: `url(${accessibilityCompliant})` },
+    },
+    {
+      title: "Maintenance & Support",
+      description: "Ongoing support to keep your site up-to-date.",
+      icon: "🛠️",
+      background: { backgroundImage: `url(${maintenanceSupport})` },
+    },
 ];
 
 export default function ServicesCarousel({

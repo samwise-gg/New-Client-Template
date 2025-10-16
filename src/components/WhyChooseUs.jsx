@@ -91,7 +91,7 @@ export default function ServicesCards() {
   };
 
   return (
-    <section className='pb-20 px-6 bg-transparent text-white text-center'>
+    <section className=' px-6 bg-transparent text-white text-center'>
       {/* <h2 className='text-7xl font-bold text-blue-600 mb-12'>G G</h2> */}
       <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <SortableContext

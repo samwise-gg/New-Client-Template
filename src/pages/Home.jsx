@@ -5,9 +5,12 @@ import bgMobile from "../assets/mobile-hero.jpg";
 import ServicesCarousel from "../components/ServicesCarousel";
 import logo from "../assets/logo.jpg";
 import ServicesCards from "../components/WhyChooseUs";
+import Squad from "../components/Squad"
+import ContactForm from "../components/ContactForm";
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [contactVisible, setContactVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,11 +73,17 @@ const Home = () => {
             Fast, responsive, and built to convert.
           </p>
           <button
+            onClick={() => setContactVisible(!contactVisible)}
             aria-label='Contact Ground Gigs'
             className='bg-blue-700 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-semibold shadow-md transition'
           >
             Get Started
           </button>
+          {contactVisible && (
+            <div className='absolute mt-4 w-[350px] bg-[#0b0f19] border border-zinc-700 p-4 rounded-xl shadow-xl z-50'>
+              <ContactForm />
+            </div>
+          )}
         </section>
         <h2 className='mt-36 text-[1.4rem] sm:text-[2.5rem] font-bold text-center mb-4 text-purple-300'>
           Explore the Possibilities
@@ -92,6 +101,7 @@ const Home = () => {
         Why Choose Us?
       </h2>
       <ServicesCards />
+      <Squad />
       <br />
       <br />
       <br />

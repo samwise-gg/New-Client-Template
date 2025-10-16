@@ -73,13 +73,20 @@ const Header = () => {
       <div className='container mx-auto p-4'>
         <nav className='flex justify-between items-center w-full'>
           <div className='flex items-center space-x-4 sm:space-x-6'>
-            <Link to='/' className='group transition-all duration-300'>
+            {/* <Link to='/' className='group transition-all duration-300'>
               <img
                 src={logo}
                 alt='Ground Gigs'
                 className='h-[3.5rem] group-hover:animate-spin-once  transition-transform duration-500 ease-in-out'
               />
-            </Link>
+            </Link> */}
+            <a href='/' className='group transition-all duration-300'>
+              <img
+                src={logo}
+                alt='Ground Gigs'
+                className='h-[3.5rem] group-hover:animate-spin-once  transition-transform duration-500 ease-in-out'
+              />
+            </a>
           </div>
           <div className=''>
             <div
