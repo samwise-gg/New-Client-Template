@@ -60,7 +60,7 @@ const Home = () => {
       />
       {/* Filter overlay gradient */}
       <div
-        className='fixed bottom-0 left-0 w-[100%] h-dvh bg-gradient-to-b from-[#10093b] to-[#000011] -z-20'
+        className='fixed bottom-0 left-0 w-[100%] h-dvh bg-gradient-to-b from-[#0a103d] to-[#000011] -z-20'
       ></div>
       {/* Page Content */}
       <div className='relative z-0 min-h-dvh w-[100%]'>
