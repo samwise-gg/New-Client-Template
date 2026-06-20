@@ -41,7 +41,7 @@ const Home = () => {
       <img
         src={bg}
         alt='Background'
-        className='hidden md:block fixed bottom-0 left-1/2 w-[100%] h-dvh object-cover -z-20 transition-all duration-[1600ms] ease-out'
+        className='hidden md:block fixed bottom-0 left-1/2 w-[100%] h-dvh object-cover -z-10 transition-all duration-[1600ms] ease-out'
         style={{
           transform: `translateX(-50%) scale(${zoom})`,
           transformOrigin: "center center",
@@ -51,7 +51,7 @@ const Home = () => {
       <img
         src={bgMobile}
         alt='Background'
-        className='block md:hidden fixed bottom-0 left-1/2 w-[100%] h-dvh object-cover -z-20 transition-all duration-700 ease-out'
+        className='block md:hidden fixed bottom-0 left-1/2 w-[100%] h-dvh object-cover -z-10 transition-all duration-700 ease-out'
         style={{
           transform: `translateX(-50%) scale(${zoom})`,
           transformOrigin: "center center",
@@ -60,7 +60,7 @@ const Home = () => {
       />
       {/* Filter overlay gradient */}
       <div
-        className='fixed bottom-0 left-0 w-[100%] h-dvh bg-gradient-to-b from-[#10093b] to-[#000011] -z-10'
+        className='fixed bottom-0 left-0 w-[100%] h-dvh bg-gradient-to-b from-[#10093b] to-[#000011] -z-20'
       ></div>
       {/* Page Content */}
       <div className='relative z-0 min-h-dvh w-[100%]'>
