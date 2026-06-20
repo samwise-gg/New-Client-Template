@@ -59,10 +59,9 @@ const Home = () => {
         }}
       />
       {/* Filter overlay gradient */}
-      {/* <div
-        className='fixed bottom-0 left-0 w-[100%] h-dvh bg-gradient-to-b from-[#10093b] to-[#000011] -z-10 transition-opacity duration-[800ms] ease-out'
-        style={{ opacity: gradientFade * filterOpacity }}
-      ></div> */}
+      <div
+        className='fixed bottom-0 left-0 w-[100%] h-dvh bg-gradient-to-b from-[#10093b] to-[#000011] -z-10'
+      ></div>
       {/* Page Content */}
       <div className='relative z-0 min-h-dvh w-[100%]'>
         <div className='flex flex-col justify-center h-full px-6 pt-40 md:pt-80 md:pl-[10%] max-w-6xl mx-auto text-white md:text-left text-center'>
