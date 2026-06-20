@@ -31,8 +31,9 @@ const Home = () => {
   const scrollThreshold = 1;
   const isZoomed = scrollY > scrollThreshold;
   const zoom = isZoomed ? maxZoom : 1;
-  const filterOpacity = isZoomed ? 1 : 0.8;
-  const gradientFade = isZoomed ? 1 : 0;
+  // const filterOpacity = isZoomed ? 1 : 0.8;
+  // const gradientFade = isZoomed ? 1 : 0;
+  const imageOpacity = isZoomed ? 0 : 1;
 
   return (
     <div className='relative min-h-[200vh] w-[100%] overflow-x-hidden'>
@@ -40,26 +41,28 @@ const Home = () => {
       <img
         src={bg}
         alt='Background'
-        className='hidden md:block fixed bottom-0 left-1/2 w-[100%] h-dvh object-cover -z-20 transition-transform duration-[1600ms] ease-out'
+        className='hidden md:block fixed bottom-0 left-1/2 w-[100%] h-dvh object-cover -z-20 transition-all duration-[1600ms] ease-out'
         style={{
           transform: `translateX(-50%) scale(${zoom})`,
           transformOrigin: "center center",
+          opacity: imageOpacity,
         }}
       />
       <img
         src={bgMobile}
         alt='Background'
-        className='block md:hidden fixed bottom-0 left-1/2 w-[100%] h-dvh object-cover -z-20 transition-transform duration-700 ease-out'
+        className='block md:hidden fixed bottom-0 left-1/2 w-[100%] h-dvh object-cover -z-20 transition-all duration-700 ease-out'
         style={{
           transform: `translateX(-50%) scale(${zoom})`,
           transformOrigin: "center center",
+          opacity: imageOpacity,
         }}
       />
       {/* Filter overlay gradient */}
-      <div
+      {/* <div
         className='fixed bottom-0 left-0 w-[100%] h-dvh bg-gradient-to-b from-[#10093b] to-[#000011] -z-10 transition-opacity duration-[800ms] ease-out'
         style={{ opacity: gradientFade * filterOpacity }}
-      ></div>
+      ></div> */}
       {/* Page Content */}
       <div className='relative z-0 min-h-dvh w-[100%]'>
         <div className='flex flex-col justify-center h-full px-6 pt-40 md:pt-80 md:pl-[10%] max-w-6xl mx-auto text-white md:text-left text-center'>
