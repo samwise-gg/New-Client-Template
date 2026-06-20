@@ -28,9 +28,12 @@ const Home = () => {
   // const zoom = 1 + scrollRatio * (maxZoom - 1);
   // const filterOpacity = 0.8 + scrollRatio * 0.2;
   // const gradientFade = scrollRatio; // used for crossfading gradients
-  const scrollThreshold = 300;
+  const scrollThreshold = 250;
+  const scrollThresholdMobile = 100;
   const isZoomed = scrollY > scrollThreshold;
+  const isZoomedMobile = scrollY > scrollThresholdMobile;
   const zoom = isZoomed ? maxZoom : 1;
+  const zoomMobile = isZoomedMobile ? maxZoom : 1;
   const filterOpacity = isZoomed ? 1 : 0.8;
   const gradientFade = isZoomed ? 1 : 0;
 
@@ -49,9 +52,9 @@ const Home = () => {
       <img
         src={bgMobile}
         alt='Background'
-        className='block md:hidden fixed bottom-0 left-1/2 w-[100%] h-screen object-cover -z-20 transition-transform duration-700 ease-out'
+        className='block md:hidden fixed bottom-0 left-1/2 w-[100%] h-dvh object-cover -z-20 transition-transform duration-700 ease-out'
         style={{
-          transform: `translateX(-50%) scale(${zoom})`,
+          transform: `translateX(-50%) scale(${zoomMobile})`,
           transformOrigin: "center center",
         }}
       />
