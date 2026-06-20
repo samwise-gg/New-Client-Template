@@ -22,18 +22,20 @@ const Home = () => {
   }, []);
 
   // Scroll-controlled zoom and filter opacity
-  const maxZoom = 3.5;
+  const maxZoom = 2.5;
+  const scrollThreshold = 40;
+  const isZoomed = scrollY > scrollThreshold;
+  const zoom = isZoomed ? maxZoom : 1;
+  const imageOpacity = isZoomed ? 0 : 1;
+
+  // BELOW is for scrolling with the scroll whell instead of triggering on threshold cross //
   // const scrollLimit = 500;
   // const scrollRatio = Math.min(scrollY, scrollLimit) / scrollLimit;
   // const zoom = 1 + scrollRatio * (maxZoom - 1);
   // const filterOpacity = 0.8 + scrollRatio * 0.2;
   // const gradientFade = scrollRatio; // used for crossfading gradients
-  const scrollThreshold = 40;
-  const isZoomed = scrollY > scrollThreshold;
-  const zoom = isZoomed ? maxZoom : 1;
   // const filterOpacity = isZoomed ? 1 : 0.8;
   // const gradientFade = isZoomed ? 1 : 0;
-  const imageOpacity = isZoomed ? 0 : 1;
 
   return (
     <div className='relative min-h-[200vh] w-[100%] overflow-x-hidden'>
