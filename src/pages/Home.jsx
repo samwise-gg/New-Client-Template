@@ -43,7 +43,7 @@ const Home = () => {
       <img
         src={bg}
         alt='Background'
-        className='hidden md:block fixed bottom-0 left-1/2 w-[100%] h-screen object-cover -z-20 transition-transform duration-[1600ms] ease-out'
+        className='hidden md:block fixed bottom-0 left-1/2 w-[100%] h-dvh object-cover -z-20 transition-transform duration-[1600ms] ease-out'
         style={{
           transform: `translateX(-50%) scale(${zoom})`,
           transformOrigin: "center center",
@@ -60,11 +60,11 @@ const Home = () => {
       />
       {/* Filter overlay gradient */}
       <div
-        className='fixed top-0 left-0 w-[100%] h-screen bg-gradient-to-b from-[#10093b] to-[#000011] -z-10 transition-opacity duration-[800ms] ease-out'
+        className='fixed top-0 left-0 w-[100%] h-dvh bg-gradient-to-b from-[#10093b] to-[#000011] -z-10 transition-opacity duration-[800ms] ease-out'
         style={{ opacity: gradientFade * filterOpacity }}
       ></div>
       {/* Page Content */}
-      <div className='relative z-0 min-h-screen w-[100%]'>
+      <div className='relative z-0 min-h-dvh w-[100%]'>
         <div className='flex flex-col justify-center h-full px-6 pt-40 md:pt-80 md:pl-[10%] max-w-6xl mx-auto text-white md:text-left text-center'>
           <h1 className='text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg'>
             Digital Solutions <br /> for Your Business
