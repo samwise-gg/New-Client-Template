@@ -28,7 +28,7 @@ const Home = () => {
   // const zoom = 1 + scrollRatio * (maxZoom - 1);
   // const filterOpacity = 0.8 + scrollRatio * 0.2;
   // const gradientFade = scrollRatio; // used for crossfading gradients
-  const scrollThreshold = 10;
+  const scrollThreshold = 40;
   const isZoomed = scrollY > scrollThreshold;
   const zoom = isZoomed ? maxZoom : 1;
   // const filterOpacity = isZoomed ? 1 : 0.8;
