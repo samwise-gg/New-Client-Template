@@ -57,7 +57,7 @@ const Home = () => {
       />
       {/* Filter overlay gradient */}
       <div
-        className='fixed top-0 left-0 w-[100%] h-dvh bg-gradient-to-b from-[#10093b] to-[#000011] -z-10 transition-opacity duration-[800ms] ease-out'
+        className='fixed bottom-0 left-0 w-[100%] h-dvh bg-gradient-to-b from-[#10093b] to-[#000011] -z-10 transition-opacity duration-[800ms] ease-out'
         style={{ opacity: gradientFade * filterOpacity }}
       ></div>
       {/* Page Content */}
