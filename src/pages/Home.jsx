@@ -15,6 +15,7 @@ const Home = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
+      console.log(window.scrollY);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -22,11 +23,16 @@ const Home = () => {
 
   // Scroll-controlled zoom and filter opacity
   const maxZoom = 3.5;
-  const scrollLimit = 500;
-  const scrollRatio = Math.min(scrollY, scrollLimit) / scrollLimit;
-  const zoom = 1 + scrollRatio * (maxZoom - 1);
-  const filterOpacity = 0.8 + scrollRatio * 0.2;
-  const gradientFade = scrollRatio; // used for crossfading gradients
+  // const scrollLimit = 500;
+  // const scrollRatio = Math.min(scrollY, scrollLimit) / scrollLimit;
+  // const zoom = 1 + scrollRatio * (maxZoom - 1);
+  // const filterOpacity = 0.8 + scrollRatio * 0.2;
+  // const gradientFade = scrollRatio; // used for crossfading gradients
+  const scrollThreshold = 300;
+  const isZoomed = scrollY > scrollThreshold;
+  const zoom = isZoomed ? maxZoom : 1;
+  const filterOpacity = isZoomed ? 1 : 0.8;
+  const gradientFade = isZoomed ? 1 : 0;
 
   return (
     <div className='relative min-h-[200vh] w-[100%] overflow-x-hidden'>
@@ -34,7 +40,7 @@ const Home = () => {
       <img
         src={bg}
         alt='Background'
-        className='hidden md:block fixed bottom-0 left-1/2 w-[100%] h-screen object-cover -z-20 transition-transform duration-200 ease-out'
+        className='hidden md:block fixed bottom-0 left-1/2 w-[100%] h-screen object-cover -z-20 transition-transform duration-[1600ms] ease-out'
         style={{
           transform: `translateX(-50%) scale(${zoom})`,
           transformOrigin: "center center",
@@ -43,7 +49,7 @@ const Home = () => {
       <img
         src={bgMobile}
         alt='Background'
-        className='block md:hidden fixed bottom-0 left-1/2 w-[100%] h-screen object-cover -z-20 transition-transform duration-200 ease-out'
+        className='block md:hidden fixed bottom-0 left-1/2 w-[100%] h-screen object-cover -z-20 transition-transform duration-700 ease-out'
         style={{
           transform: `translateX(-50%) scale(${zoom})`,
           transformOrigin: "center center",
@@ -51,7 +57,7 @@ const Home = () => {
       />
       {/* Filter overlay gradient */}
       <div
-        className='fixed top-0 left-0 w-[100%] h-screen bg-gradient-to-b from-[#10093b] to-[#000011] -z-10 transition-opacity duration-400 ease-out'
+        className='fixed top-0 left-0 w-[100%] h-screen bg-gradient-to-b from-[#10093b] to-[#000011] -z-10 transition-opacity duration-[800ms] ease-out'
         style={{ opacity: gradientFade * filterOpacity }}
       ></div>
       {/* Page Content */}
@@ -64,7 +70,7 @@ const Home = () => {
             Creating custom websites to grow your online presence
           </p>
         </div>
-        <section className='text-center px-6 pt-80 mt-80 max-w-3xl mx-auto relative z-10'>
+        <section className='text-center px-6 pt-80 mt-0 max-w-3xl mx-auto relative z-10'>
           <h2 className='text-4xl font-extrabold text-blue-600 mb-4'>
             Your Website, Done Right
           </h2>
